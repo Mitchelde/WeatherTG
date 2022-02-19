@@ -1,0 +1,57 @@
+from pyowm import OWM
+
+from pyowm.utils import config
+
+from pyowm.utils import timestamps
+import aiohttp
+
+import time
+from .. import loader, utils
+
+from asyncio import sleep, gather
+
+
+from datetime import tzinfo, datetime
+
+from uniborg.util import admin_cmd
+from .. import loader, utils
+
+from asyncio import sleep, gather
+
+
+
+
+
+
+ 
+
+ 
+
+
+
+# ---------- FREE API KEY examples ---------------------
+
+owm = OWM('6492f78d7414505700d590434bfaf0f9')
+
+mgr = owm.weather_manager()
+
+# Search for current weather in London (Great Britain) and get details
+async def weathercmd(self):
+observation = mgr.weather_at_place(self)
+
+w = observation.weather
+
+w.detailed_status         # 'clouds'
+
+w.wind()                  # {'speed': 4.6, 'deg': 330}
+
+w.humidity                # 87
+
+w.temperature('celsius')  # {'temp_max': 10.5, 'temp': 9.7, 'temp_min': 9.0}
+
+w.rain                    # {}
+
+w.heat_index              # None
+
+w.clouds                  # 75
+
