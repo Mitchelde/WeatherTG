@@ -9,9 +9,6 @@
 import aiohttp
 
 import time
-import json
-
-import requests 
 
 from datetime import tzinfo, datetime
 
@@ -21,16 +18,15 @@ from uniborg.util import admin_cmd
 
  
 
-@borg.on(admin_cmd("weat (.*)"))
+@borg.on(admin_cmd("weather (.*)"))
 
 async def _(event):
 
     if event.fwd_from:
 
         return
-        api_token = '314f728a8716259419a521241e0d8713'
 
-
+    sample_url = "api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={314f728a8716259419a521241e0d8713}"
 
     input_str = event.pattern_match.group(1)
 
@@ -101,3 +97,6 @@ async def _(event):
     else:
 
         await event.edit(response_api["message"])
+ 
+
+
