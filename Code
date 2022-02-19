@@ -21,7 +21,7 @@ from uniborg.util import admin_cmd
 
  
 
-@borg.on(admin_cmd("weather (.*)"))
+@borg.on(admin_cmd("weat (.*)"))
 
 async def _(event):
 
